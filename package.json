@@ -1,0 +1,72 @@
+{
+  "name": "tx_web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-vue": "^3.0.1",
+    "@types/axios": "^0.14.0",
+    "@types/echarts": "^4.1.11",
+    "@types/jquery": "^3.3.31",
+    "@types/js-cookie": "^2.2.2",
+    "@types/lodash": "^4.14.137",
+    "@types/moment-range": "^3.1.2",
+    "@types/nprogress": "^0.2.0",
+    "@types/tinymce": "^4.5.23",
+    "core-js": "^2.6.9",
+    "echarts": "^4.2.1",
+    "element-ui": "^2.11.1",
+    "jquery": "^3.4.1",
+    "js-cookie": "^2.2.1",
+    "nprogress": "^0.2.0",
+    "register-service-worker": "^1.6.2",
+    "tinymce": "^5.0.14",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.2.2",
+    "vue-router": "^3.1.2",
+    "vuedraggable": "^2.23.0",
+    "vuex": "^3.1.1",
+    "vuex-class": "^0.3.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-pwa": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "lint-staged": "^9.2.5",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "tslint": "^5.19.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

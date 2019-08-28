@@ -1,0 +1,295 @@
+@import '_reset.scss';
+@import '_icon.scss';
+/**
+	v-center  垂直居中, 需要设定容器的position
+	h-center  水平居中, 需要设定容器的position
+	c-center  全部居中, 需要设定容器的position
+	w5~w100   百分比样式
+	can-not-select 文本不能选中样式
+	mg  外边框单样式
+	pd  内边框单样式
+	bd  边框样式
+	ft  字体大小单样式
+	ta  文本对齐单样式
+	fr/fl 浮动样式
+	pa  layout样式
+	dl  行内元素基样式
+	clearfix 清除浮动样式
+	text-ellipsis 文本省略号
+	box-shadow-none 去除阴影样式
+*/
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #515a6e;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+//去除登录页面在chrome下的用户名密码自动填充样式
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition-delay: 9999999999999s;
+  transition: color 9999999999999s ease-out, background-color 9999999999999s ease-out;
+}
+
+@mixin v-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin h-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin c-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@mixin can-not-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*边框样式*/
+
+@mixin no-bdr {
+  border: 0 !important;
+}
+
+@mixin bdr {
+  border: 1px solid;
+}
+
+@mixin bdrt {
+  border-top: 1px solid;
+}
+
+@mixin bdrr {
+  border-right: 1px solid;
+}
+
+@mixin bdrb {
+  border-bottom: 1px solid;
+}
+
+@mixin bdrl {
+  border-left: 1px solid;
+}
+
+@mixin bdr-r3 {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+@mixin bdr-r5 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+@mixin bdr-r10 {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+@mixin bdr-ra {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+
+/*字体样式*/
+
+@mixin fb {
+  font-weight: bold;
+}
+
+@mixin fn {
+  font-weight: normal;
+}
+
+
+/*文本对齐*/
+
+@mixin ta-c {
+  text-align: center !important;
+}
+
+@mixin ta-l {
+  text-align: left;
+}
+
+@mixin ta-r {
+  text-align: right;
+}
+
+
+/*浮动*/
+
+@mixin fl {
+  float: left;
+}
+
+@mixin fr {
+  float: right;
+}
+
+
+/*位置*/
+
+@mixin pr {
+  position: relative;
+}
+
+@mixin pa {
+  position: absolute;
+}
+
+@mixin ps {
+  position: static;
+}
+
+@mixin pf {
+  position: fixed;
+}
+
+
+/*行内元素*/
+
+@mixin d-inline-block {
+  display: inline-block;
+}
+
+@mixin v-m {
+  vertical-align: middle;
+}
+
+@mixin v-t {
+  vertical-align: top;
+}
+
+
+/*鼠标手势*/
+
+@mixin cursor-pointer {
+  cursor: pointer;
+}
+
+@mixin cursor-move {
+  cursor: move;
+}
+
+
+/*去除阴影*/
+
+@mixin box-shadow-none {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+
+/*初始化overflow*/
+
+@mixin overflow-normal {
+  overflow: visible;
+}
+
+@mixin resize-none {
+  resize: none;
+}
+
+@mixin hide {
+  display: none;
+}
+
+@mixin show {
+  display: block;
+}
+
+
+/** 经典清除浮动**/
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+@mixin clearfix {
+  @include clearfix;
+}
+
+
+/** 文本省略号 **/
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/*滚动条*/
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(150, 150, 150, .3);
+}
+
+//li 显示*行 其他省略号
+
+@mixin elliosis_line($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
