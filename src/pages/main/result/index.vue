@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <tx-header />
+  <div class="result-main">
   </div>
 </template>
 
