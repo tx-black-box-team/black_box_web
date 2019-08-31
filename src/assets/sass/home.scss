@@ -11,6 +11,7 @@
     transform: translateY(-2000px);
 
     &.render {
+      @include drop(-2000px, -100px);
       animation: drop 1.5s;
       animation-delay: 300ms;
       animation-fill-mode: forwards;
@@ -30,16 +31,6 @@
           }
         }
       }
-    }
-  }
-
-  @keyframes drop {
-    0% {
-      transform: translateY(-2000px);
-    }
-    100% {
-      transform: translateY(-100px);
-      animation-timing-function: cubic-bezier(0.14, 0.63, 0.93, 0.39);
     }
   }
 }
