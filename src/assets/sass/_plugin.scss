@@ -1,0 +1,20 @@
+.pop-list {
+  ul {
+    & > li {
+      display: flex;
+      align-items: center;
+
+      .name {
+        max-width: calc(100% - 60px);
+      }
+
+      .el-tag {
+        margin-right: 10px;
+        padding: 5px;
+        display: flex;
+        height: 20px;
+        align-items: center;
+      }
+    }
+  } 
+}

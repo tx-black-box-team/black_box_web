@@ -1,6 +1,9 @@
 <template>
   <div class="header-main">
-    <div class="logo"></div>
+    <div class="logo">
+      <i></i>
+      <p>天下3小黑盒</p>
+    </div>
     <div class="menu-box">
       <el-menu class="" mode="horizontal">
         <el-menu-item index="1">处理中心</el-menu-item>

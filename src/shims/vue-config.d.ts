@@ -10,6 +10,7 @@ declare module 'vue/types/vue' {
     _: any,
     $: any,
     echarts: any,
-    cookies: any
+    cookies: any,
+    beans: any
   }
 }

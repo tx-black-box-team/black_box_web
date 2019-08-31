@@ -1,35 +1,39 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Action, Getter, State } from 'vuex-class'
-
+import * as HomeRequest from '@/services/home'
 @Component
 export default class Home extends Vue {
 
+  public homeService: HomeRequest.HomeService = HomeRequest.default
   public search_text: string = ''
   @Action('home/set_id')
   public _store_set_id!: (() => Promise<any>) | (() => void) | (() => any)
   @Getter('home/get_id') public _store_get_id !: string
 
-  public querySearch (queryString: string, cb: any) {
-    const restaurants: any = []
-    cb(restaurants)
+  public async querySearch (queryString: string, callback: any): Promise<void> {
+    const params = new HomeRequest.SearchRoleRequest()
+    params.name = queryString
+    let res: any = await this.homeService.searchRole(params)
+    res && (res = res.slice(-5))
+    callback(res || [])
   }
 
-  public handleSelect (item: any) {
+  public handleSelect (item: any): void {
     console.log(item)
   }
 
-  public search () {
+  public search (): void {
     if (this.search_text) {
       this.$router.push(`/result?search=${encodeURIComponent(this.search_text)}`)
     }
   }
 
-  public mounted () {
+  public mounted (): void {
     const search_area: Vue | Element | Vue[] | Element[] = this.$refs.search_area
 
     setTimeout(() => {
       this.$(search_area).attr('class', `search-box render`)
-    }, 300)
+    })
   }
 
   public created (): void {

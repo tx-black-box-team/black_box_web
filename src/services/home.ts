@@ -1,7 +1,12 @@
 import Service from './'
 
 interface HomeBase<T> {
-  getList (data: object): Promise<T>
+  searchRole (data: object): Promise<T>
+}
+
+export class SearchRoleRequest {
+  public name ?: string
+  public PageIndex ?: number | string = 1
 }
 
 export class HomeService extends Service implements HomeBase<any> {
@@ -9,12 +14,11 @@ export class HomeService extends Service implements HomeBase<any> {
     super()
   }
 
-  public getList (data: object): Promise<any> {
-    return new Promise((resolve: any) => {
-      super.get('/api', data, resolve)
+  public searchRole (data: SearchRoleRequest): Promise<object | null> {
+    return new Promise((resolve: (() => void), reject: (() => void)) => {
+      super.get('/api/SearchRole', data, resolve, reject)
     })
   }
 }
-
 
 export default new HomeService()

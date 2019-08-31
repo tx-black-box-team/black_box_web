@@ -8,22 +8,24 @@ import Cookies from 'js-cookie'
 import App from './App.vue'
 import router from './routers/router'
 import store from './stores'
-import { services } from './services'
 import Components from './components'
+import * as beans from './beans'
 import './sw/registerServiceWorker'
+import 'iview/dist/styles/iview.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/sass/index.scss'
+
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Components.init(Vue)
 
 Vue.prototype = Object.assign(Vue.prototype, {
-  ...services,
   _: lodash,
   $: jquery,
   echarts,
-  cookies: Cookies
+  cookies: Cookies,
+  beans
 })
 
 new Vue({

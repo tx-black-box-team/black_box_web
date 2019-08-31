@@ -4,10 +4,12 @@ import { Vue, Component } from 'vue-property-decorator'
 export default class Main extends Vue {
 
   public mounted () {
-    const num: number = Math.floor(Math.random() * 11) + 1
-    const bg: Vue | Element | Vue[] | Element[] = this.$refs.$main_bg
+    const num: number = Math.floor(Math.random() * 23) + 1
+    const bg: Vue | Element | Vue[] | Element[] = this.$refs.main_bg
 
-    // this.$(bg).attr('class', `flur-box login-bg${num}`)
+    console.log(this.$refs)
+
+    this.$(bg).attr('class', `flur-box login-bg${num}`)
   }
 
 }
