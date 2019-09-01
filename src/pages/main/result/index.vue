@@ -5,7 +5,7 @@
         v-model="search_text"
         :fetch-suggestions="query_search"
         :trigger-on-focus="false"
-        @keypress.enter.native="search"
+        @keypress.enter.native="search_enter"
         @clear="reset_search"
         @select="handle_select"
         placeholder="请输入你想搜索的内容"

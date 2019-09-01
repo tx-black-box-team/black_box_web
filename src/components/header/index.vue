@@ -1,6 +1,6 @@
 <template>
   <div class="header-main">
-    <div class="logo">
+    <div class="logo" @click="back_home">
       <i></i>
       <p>天下3小黑盒</p>
     </div>

@@ -1,7 +1,7 @@
 import Service from './'
 
 interface HomeBase<T> {
-  searchRole (data: object): Promise<T>
+  search (data: object): Promise<T>
 }
 
 export class SearchRoleRequest {
@@ -14,9 +14,9 @@ export class HomeService extends Service implements HomeBase<any> {
     super()
   }
 
-  public searchRole (data: SearchRoleRequest): Promise<any[]> {
+  public search (data: SearchRoleRequest): Promise<any[]> {
     return new Promise((resolve: (() => void), reject: (() => void)) => {
-      super.get('/api/SearchRole', data, resolve, reject)
+      super.get('/api/Search', data, resolve, reject)
     })
   }
 }

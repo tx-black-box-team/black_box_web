@@ -98,10 +98,11 @@
               min-height: 60px;
               & > span {
                 display: block;
-                line-height: 20px;
+                line-height: 24px;
+                font-size: 14px;
 
                 & > em {
-                  color: #679EF1;
+                  color: rgb(19, 108, 241);
                   margin-left: 10px;
                 }
               }

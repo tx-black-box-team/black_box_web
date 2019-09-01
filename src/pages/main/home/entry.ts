@@ -13,8 +13,10 @@ export default class Home extends Vue {
   public async query_search (query_string: string, callback: any): Promise<void> {
     const params = new HomeRequest.SearchRoleRequest()
     params.name = query_string
-    let res: any = await this.homeService.searchRole(params)
+    let res: any = await this.homeService.search(params)
     res && (res = res.slice(0, 5))
+    res = this.utils.hight_light(query_string, res, 'Name')
+    console.log(res)
     callback(res || [])
   }
 

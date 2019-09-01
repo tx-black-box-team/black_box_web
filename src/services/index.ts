@@ -26,7 +26,7 @@ class AxiosUtil {
         return config
       }, (error: any) => {
         if (this.http_count > 0) {
-          this.loading.close()
+          this.loading && this.loading.close()
         }
         this.http_count--
         return Promise.reject(error)
@@ -34,12 +34,12 @@ class AxiosUtil {
       this.axios.interceptors.response.use((response: any) => {
         this.http_count--
         if (this.http_count <= 0) {
-          this.loading.close()
+          this.loading && this.loading.close()
         }
         return response
       }, (error: any) => {
         if (this.http_count > 0) {
-          this.loading.close()
+          this.loading && this.loading.close()
         }
         this.http_count--
         if (error.response) {

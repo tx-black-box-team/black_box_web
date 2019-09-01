@@ -29,3 +29,15 @@ export const date_formart = (num: any, type: string): string => {
   }
   return ''
 }
+
+export const hight_light = (
+  qstr: string,
+  list: any[],
+  field: string): any[] => list.map(
+    (item: any) => {
+      return {
+        ...item,
+        [field]: qstr ? item[field].replace(`${qstr}`, `<em>${qstr}</em>`) : item[field]
+      }
+    }
+  )
