@@ -7,15 +7,26 @@ export default class TxHeader extends Vue {
   public menu_selected: string = ''
 
   public back_home () {
-    this.$router.push({
-      name: 'home'
-    })
+    const { name } = this.$route
+    name !== 'home' && (
+      this.$router.push({
+        name: 'home'
+      })
+    )
   }
 
   public menu_see (type: string) {
-    this.$router.push({
-      name: type
-    })
+    const { name } = this.$route
+    if (name !== type) {
+      if (type === 'home') {
+        if (name === 'home' || name === 'result') {
+          return
+        }
+      }
+      this.$router.push({
+        name: type
+      })
+    }
   }
 
   public router_init () {
@@ -41,8 +52,8 @@ export default class TxHeader extends Vue {
     this.router_init()
   }
 
-  @Watch('$router')
-  public routerChange () {
+  @Watch('$route')
+  public routerChange (newVal: any) {
     this.router_init()
   }
 }

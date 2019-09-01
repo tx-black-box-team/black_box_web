@@ -4,13 +4,10 @@
   position: relative;
 
   .logo-con {
-    position: absolute;
-    left: 0;
-    right: 0;
+    @include h-center;
     top: 100px;
     width: 200px;
     height: 300px;
-    margin: auto;
     text-align: center;
     transform: translateY(-2000px);
 
@@ -41,12 +38,7 @@
   }
 
   .search-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    @include c-center;
     width: 500px;
     height: 50px;
     transform: translateY(-2000px);

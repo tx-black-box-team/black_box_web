@@ -1,24 +1,15 @@
-import * as homeApi from '@/services/home'
+class Home {
+  public namespaced: boolean = true
 
-const homeService: homeApi.HomeService = homeApi.default
+  public state = {}
 
-const state = {
-  search_list: []
-}
+  public actions = {}
 
-const actions = {
-}
+  public getters = {}
 
-const getters = {
-}
-
-const mutations = {
+  public mutations = {}
 }
 
 export default {
-  namespaced: true,
-  state,
-  actions,
-  getters,
-  mutations
+  ...new Home()
 }
