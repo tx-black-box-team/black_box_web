@@ -1,8 +1,9 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="hero-main">
+    hero
   </div>
 </template>
+
 <script lang="ts">
 import entry from './entry'
 export default entry

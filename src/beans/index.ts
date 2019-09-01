@@ -12,3 +12,10 @@ export const ROLE_TYPE = {
     color: '#909398'
   }
 }
+
+export const loading_options = {
+  lock: true,
+  text: 'Loading',
+  spinner: 'el-icon-loading',
+  background: 'rgba(255, 255, 255, 0.4)'
+}

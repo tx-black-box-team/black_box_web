@@ -6,10 +6,10 @@
     </div>
     <div class="menu-box">
       <el-menu class="" mode="horizontal">
-        <el-menu-item index="1">处理中心</el-menu-item>
-        <el-menu-item index="2">消息中心</el-menu-item>
-        <el-menu-item index="3">消息中心</el-menu-item>
-        <el-menu-item index="4">消息中心</el-menu-item>
+        <el-menu-item index="hero">英雄榜</el-menu-item>
+        <el-menu-item index="forces">势力</el-menu-item>
+        <el-menu-item index="role">角色字典</el-menu-item>
+        <el-menu-item index="pavilion">藏宝阁</el-menu-item>
       </el-menu>
     </div>
     <div class="user-box"></div>

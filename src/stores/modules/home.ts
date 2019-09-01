@@ -1,21 +1,19 @@
+import * as homeApi from '@/services/home'
+
+const homeService: homeApi.HomeService = homeApi.default
+
 const state = {
-  id: 1
+  search_list: []
 }
 
 const actions = {
-  set_id (stores: any): any {
-    stores.state.id ++
-    return stores.state.id
-  }
 }
 
 const getters = {
-  get_id (state: any): string {
-    return state.id
-  }
 }
 
-const mutations = {}
+const mutations = {
+}
 
 export default {
   namespaced: true,

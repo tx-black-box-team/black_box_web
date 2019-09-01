@@ -1,20 +1,20 @@
 import { Vue, Component } from 'vue-property-decorator'
-import { Action, Getter, State } from 'vuex-class'
+// import { Action, Getter, State } from 'vuex-class'
 import * as HomeRequest from '@/services/home'
 @Component
 export default class Home extends Vue {
 
   public homeService: HomeRequest.HomeService = HomeRequest.default
   public search_text: string = ''
-  @Action('home/set_id')
-  public _store_set_id!: (() => Promise<any>) | (() => void) | (() => any)
-  @Getter('home/get_id') public _store_get_id !: string
+  // @Action('home/set_id')
+  // public _store_set_id!: (() => Promise<any>) | (() => void) | (() => any)
+  // @Getter('home/get_id') public _store_get_id !: string
 
-  public async querySearch (queryString: string, callback: any): Promise<void> {
+  public async query_search (query_string: string, callback: any): Promise<void> {
     const params = new HomeRequest.SearchRoleRequest()
-    params.name = queryString
+    params.name = query_string
     let res: any = await this.homeService.searchRole(params)
-    res && (res = res.slice(-5))
+    res && (res = res.slice(0, 5))
     callback(res || [])
   }
 
@@ -36,11 +36,4 @@ export default class Home extends Vue {
     })
   }
 
-  public created (): void {
-    this._store_set_id().then((res: any) => {
-      console.log(this._store_get_id)
-    }, (err: any) => {
-      console.log(err)
-    })
-  }
 }

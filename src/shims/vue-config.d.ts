@@ -11,6 +11,7 @@ declare module 'vue/types/vue' {
     $: any,
     echarts: any,
     cookies: any,
-    beans: any
+    beans: any,
+    utils: any
   }
 }

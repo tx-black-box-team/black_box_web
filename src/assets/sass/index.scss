@@ -60,7 +60,7 @@ $Solar: (
       $item: nth($Solar, $i);
       &.login-bg#{$i} {
         $sol: map-get($item, name);
-        @include bg('bg/#{$sol}.jpeg');
+        @include web_bg('/local/file/bg.jpeg?img=#{$sol}.jpeg');
         background-size: auto calc(100% + 86px);
         background-position: center -43px;
       }

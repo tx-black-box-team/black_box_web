@@ -6,6 +6,12 @@ $root_url: '../imgs';
   background-image: url('#{$root_url}/#{$img}');
 }
 
+@mixin base_web_img($img) {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('#{$img}');
+}
+
 @mixin bg($img) {
   @include base_img($img);
   background-size: cover;
@@ -14,4 +20,9 @@ $root_url: '../imgs';
 @mixin icon($img) {
   @include base_img($img);
   background-size: 100% 100%;
+}
+
+@mixin web_bg($img) {
+  @include base_web_img($img);
+  background-size: cover;
 }

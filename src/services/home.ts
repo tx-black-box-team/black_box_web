@@ -5,7 +5,7 @@ interface HomeBase<T> {
 }
 
 export class SearchRoleRequest {
-  public name ?: string
+  public name ?: string | Array<string | null> = ''
   public PageIndex ?: number | string = 1
 }
 
@@ -14,7 +14,7 @@ export class HomeService extends Service implements HomeBase<any> {
     super()
   }
 
-  public searchRole (data: SearchRoleRequest): Promise<object | null> {
+  public searchRole (data: SearchRoleRequest): Promise<any[]> {
     return new Promise((resolve: (() => void), reject: (() => void)) => {
       super.get('/api/SearchRole', data, resolve, reject)
     })
