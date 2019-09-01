@@ -1,0 +1,11 @@
+@mixin drop($start, $end) {
+  @keyframes drop {
+    0% {
+      transform: translateY($start);
+    }
+    100% {
+      transform: translateY($end);
+      animation-timing-function: cubic-bezier(0.14, 0.63, 0.93, 0.39);
+    }
+  }  
+}

@@ -4,7 +4,7 @@
       <i></i>
       <p>天下3小黑盒</p>
     </div>
-    <div class="search-box" ref="search_area">
+    <div class="search-box render" ref="search_area">
       <el-autocomplete
         v-model="search_text"
         :fetch-suggestions="query_search"

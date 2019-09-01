@@ -24,16 +24,14 @@ export default class Home extends Vue {
 
   public search (): void {
     if (this.search_text) {
-      this.$router.push(`/result?search=${encodeURIComponent(this.search_text)}`)
+      const params = {
+        name: 'result',
+        params: {
+          search: encodeURIComponent(this.search_text)
+        }
+      }
+      this.$router.push(params)
     }
-  }
-
-  public mounted (): void {
-    const search_area: Vue | Element | Vue[] | Element[] = this.$refs.search_area
-
-    setTimeout(() => {
-      this.$(search_area).attr('class', `search-box render`)
-    })
   }
 
 }
