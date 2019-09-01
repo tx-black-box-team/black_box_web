@@ -23,6 +23,7 @@ export default class Result extends Vue {
     params.name = query_string
     let res: any = await this.homeService.search(params)
     res && (res = res.slice(0, 5))
+    res = this.utils.hight_light(query_string, res, 'Name')
     callback(res || [])
   }
 

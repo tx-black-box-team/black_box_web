@@ -3,8 +3,8 @@
   z-index: 101;
   width: 100%;
   height: 61px;
-  background-color: rgba(255, 255, 255, .6);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .6);
+  background-color: $bg_color_normal;
+  box-shadow: 0 0 5px 0 $shadow_dark;
   display: flex;
   justify-content: space-between;
 
@@ -26,7 +26,7 @@
 
     & > p {
       font-size: 16px;
-      background: linear-gradient(to right, #52533A, #65272C);
+      background: linear-gradient(to right, $logo_light, $logo_dark);
       background-clip: text;
       color: transparent;
     }
@@ -42,17 +42,17 @@
 
       .el-menu-item {
         border-bottom: 0;
-        color: #666;
+        color: $text_light;
         border-radius: 3px;
         margin-right: 10px;
         transition: 500ms;
 
         &:hover,
         &.is-active {
-          background-color: rgba(255, 255, 255, .8);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, .4);
+          background-color: $bg_color_dark;
+          box-shadow: 0 0 10px 0 shadow_normal;
           border-bottom: 0;
-          color: #CF442C;
+          color: $menu_active;
         }
       }
     }

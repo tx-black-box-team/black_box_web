@@ -28,7 +28,7 @@
               v-show="item.Type === 1">
               Lv.{{item.DengJi}}
             </el-tag>
-            <div class="name">{{ item.Name }}</div>
+            <div class="name" v-html="item.Name"></div>
           </div>
           <div class="bottom-info">
             <div class="service-indo">{{item.YXQ}}</div>

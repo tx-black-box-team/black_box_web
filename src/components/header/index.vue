@@ -5,7 +5,8 @@
       <p>天下3小黑盒</p>
     </div>
     <div class="menu-box">
-      <el-menu class="" mode="horizontal">
+      <el-menu :default-active="menu_selected" @select="menu_see" class="" mode="horizontal">
+        <el-menu-item index="home">首页</el-menu-item>
         <el-menu-item index="hero">英雄榜</el-menu-item>
         <el-menu-item index="forces">势力</el-menu-item>
         <el-menu-item index="role">角色字典</el-menu-item>

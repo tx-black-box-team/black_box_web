@@ -17,15 +17,15 @@
       & > .el-input {
         & > input {
           height: 50px;
-          background-color: rgba(255, 255, 255, .8);
+          background-color: $bg_color_dark;
   
           &::placeholder {
-            color: #999;
+            color: $text_placeholder;
           }
         }
 
         .el-input__prefix {
-          color: #666;
+          color: $text_light;
           font-size: 20px;
 
           & > i {
@@ -63,14 +63,14 @@
             margin: 0 20px;
             padding: 10px;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, .8);
-            box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+            background-color: $bg_color_dark;
+            box-shadow: 0 0 5px 0 $shadow_light;
             cursor: pointer;
             transition: 500ms;
 
             &:hover {
-              box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-              background-color: #fff;
+              box-shadow: 0 0 10px 0 $shadow_normal;
+              background-color: $white_whole;
             }
 
             .header {
@@ -102,7 +102,7 @@
                 font-size: 14px;
 
                 & > em {
-                  color: rgb(19, 108, 241);
+                  color: $em_dark;
                   margin-left: 10px;
                 }
               }
@@ -116,10 +116,10 @@
 
               & > span {
                 font-size: 12px;
-                color: #999;
+                color: $text_placeholder;
 
                 em {
-                  color: #333;
+                  color: $text_dark;
                 }
               }
             }

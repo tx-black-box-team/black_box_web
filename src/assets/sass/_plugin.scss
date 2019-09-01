@@ -10,7 +10,7 @@
           max-width: calc(100% - 60px);
 
           & > em {
-            color: #679EF1;
+            color: $em_light;
             margin: 0 2px;
           }
         }

@@ -1,6 +1,8 @@
+@import '_color.scss';
 @import '_reset.scss';
 @import '_icon.scss';
 @import '_plugin.scss';
+
 /**
 	v-center  垂直居中, 需要设定容器的position
 	h-center  水平居中, 需要设定容器的position
@@ -20,12 +22,38 @@
 	box-shadow-none 去除阴影样式
 */
 
+$Solar: (
+  (name: '立春'),
+  (name: '雨水'),
+  (name: '惊蛰'),
+  (name: '春分'),
+  (name: '清明'),
+  (name: '谷雨'),
+  (name: '立夏'),
+  (name: '小满'),
+  (name: '芒种'),
+  (name: '夏至'),
+  (name: '小暑'),
+  (name: '大暑'),
+  (name: '立秋'),
+  (name: '处暑'),
+  (name: '白露'),
+  (name: '秋分'),
+  (name: '寒露'),
+  (name: '霜降'),
+  (name: '立冬'),
+  (name: '小雪'),
+  (name: '大雪'),
+  (name: '冬至'),
+  (name: '小寒'),
+  (name: '大寒')
+);
+
 html,
 body {
   width: 100%;
   height: 100%;
   font-size: 12px;
-  color: #515a6e;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
 }
@@ -283,7 +311,7 @@ input:-webkit-autofill:active {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: rgba(150, 150, 150, .3);
+  background: $scroll_color;
 }
 
 //li 显示*行 其他省略号

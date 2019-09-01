@@ -16,7 +16,6 @@ export default class Home extends Vue {
     let res: any = await this.homeService.search(params)
     res && (res = res.slice(0, 5))
     res = this.utils.hight_light(query_string, res, 'Name')
-    console.log(res)
     callback(res || [])
   }
 
