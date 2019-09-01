@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="logo-con">
+    <div class="logo-con render">
       <i></i>
       <p>天下3小黑盒</p>
     </div>

@@ -7,11 +7,19 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 60px;
+    top: 100px;
     width: 200px;
     height: 300px;
     margin: auto;
     text-align: center;
+    transform: translateY(-2000px);
+
+    &.render {
+      @include drop(-2000px, 0);
+      animation: drop 1.5s;
+      animation-delay: 300ms;
+      animation-fill-mode: forwards;
+    }
 
     & > i {
       display: block;
@@ -44,7 +52,7 @@
     transform: translateY(-2000px);
 
     &.render {
-      @include drop(-2000px, -100px);
+      @include drop(-2000px, -40px);
       animation: drop 1.5s;
       animation-delay: 300ms;
       animation-fill-mode: forwards;
