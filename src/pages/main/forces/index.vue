@@ -1,6 +1,6 @@
 <template>
   <div class="force-main">
-    force
+    
   </div>
 </template>
 
