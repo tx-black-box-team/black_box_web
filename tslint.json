@@ -19,9 +19,11 @@
     "object-literal-sort-keys": false,
     "no-consecutive-blank-lines": false,
     "no-shadowed-variable": false,
+    "one-variable-per-declaration": false,
     "max-classes-per-file": true,
     "no-floating-promises": false,
     "variable-name": false,
+    "semicolon": [false],
      "no-console": [
       false,
       "log",

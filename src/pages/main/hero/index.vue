@@ -26,7 +26,10 @@
           {{item.title}}
         </span>
         <div class="hero-body">
-          <analysis />
+          <analysis
+            :role="selected"
+            @save_tab="save_tab"
+          />
         </div>
       </el-tab-pane>
     </el-tabs>

@@ -1,4 +1,4 @@
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Emit, Component } from 'vue-property-decorator'
 import { Action, Getter, State } from 'vuex-class'
 import Analysis from './analysis/index.vue'
 import Ranking from './ranking/index.vue'
@@ -42,6 +42,11 @@ export default class Hero extends Vue {
       this.set_tab_list(this.hero_tabs)
       this.tab_selected = temp_id
     }
+  }
+
+  @Emit()
+  public save_tab (data: any) {
+    this.set_tab_list(data)
   }
 }
 

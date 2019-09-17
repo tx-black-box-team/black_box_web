@@ -7,11 +7,120 @@
     height: 100%;
     border-radius: 0 0 5px 5px;
     background-color: $bg_color_normal;
-    @include can-not-select;
+    @extend .can-not-select;
 
     .el-tabs__content {
       width: 100%;
-      height: calc(100% - 56px);
+      height: calc(100% - 40px);
+
+      .el-tab-pane {
+        width: 100%;
+        height: 100%;
+        
+        .hero-body {
+          width: 100%;
+          height: 100%;
+
+          .el-dialog__wrapper {
+            position: absolute;
+          }
+
+          .v-modal {
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+.analysis-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .el-form {
+    width: 600px;
+    height: 32px;
+    @include c-center;
+
+    .el-form-item__content {
+      display: flex;
+      justify-content: space-around;
+
+      .el-input {
+        width: 500px;
+      }
+    }
+  }
+
+  .analysis-body {
+    width: 100%;
+    height: 100%;
+
+    .equipment-con {
+      width: 260px;
+      height: 450px;
+      @include web_bg('http://res.tx3.netease.com/pc/qt/20151231153005/images/new_bg_c6fe711.png');
+      padding: 14px 28px;
+
+      .title {
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .equipment-body {
+        width: 100%;
+        height: calc(100% - 48px);
+        margin-top: 18px;
+        display: flex;
+
+        .equ-box {
+          height: 345px;
+          padding: 25px 0 0 16px;
+          width: 208px;
+          display: grid;
+          grid-template-columns: 34px 34px 34px 34px;
+          grid-column-gap: 12px;
+
+          .equ_display_father {
+            height: 34px;
+            position: relative;
+            width: 34px;
+            padding: 0;
+            margin-bottom: 5px;
+
+            & > span {
+              display: block;
+              width: 100%;
+              height: 100%;
+
+              .el-popover__reference {
+                width: 100%;
+                height: 100%;
+                position: relative;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+              }
+
+              a {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+              }
+            }
+
+          }
+        }
+      }
     }
   }
 }

@@ -19,3 +19,14 @@ export const loading_options = {
   spinner: 'el-icon-loading',
   background: 'rgba(255, 255, 255, 0.4)'
 }
+
+export const EQ_ID_LIST: any = (row: number, col: number, prefix: string): string[] => {
+  const res = []
+  let i, j
+  for (i = 0; i < row; i++) {
+    for (j = 0; j < col; j++) {
+      res.push(`${prefix}${i}${j}`)
+    }
+  }
+  return res
+}
